@@ -4,7 +4,8 @@ FROM alpine:3.13.2 as builder
 RUN apk add --no-cache --update cmake build-base librtlsdr-dev libusb-dev bash tar gzip unzip
 COPY --from=caching-downloader / /tmp
 WORKDIR /build
-RUN tar -zxvf /tmp/rtl433_0.9.tar.gz --strip-components=1
+#RUN tar -zxvf /tmp/rtl433_0.9.tar.gz --strip-components=1
+RUN tar -zxvf /tmp/rtl433_0.9.tar.gz
 RUN mkdir out && cd out && cmake .. && make -j$(nproc) && make install
 RUN echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
 
