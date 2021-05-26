@@ -1,5 +1,5 @@
 FROM scratch as caching-downloader
-ADD https://github.com/dfiore1230/rtl_433toMQTT/raw/master/rtl_433-feat-inkbird-ith20r.zip /rtl_433.zip
+ADD https://github.com/dfiore1230/rtl_433toMQTT/raw/master/rtl433.zip /rtl_433.zip
 FROM alpine:3.13.2 as builder
 RUN apk add --no-cache --update cmake build-base librtlsdr-dev libusb-dev bash tar unzip
 COPY --from=caching-downloader / /tmp
