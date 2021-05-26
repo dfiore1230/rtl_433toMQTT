@@ -1,3 +1,5 @@
+## Forked build from here: https://github.com/merbanan/rtl_433/issues/1462 to add support for inkbird
+
 
 # Multiarch RTL433 to MQTT gateway docker
 
